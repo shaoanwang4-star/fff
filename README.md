@@ -1,9 +1,25 @@
-# `scheduler`
+# tinyglobby
 
-This is a package for cooperative scheduling in a browser environment. It is currently used internally by React, but we plan to make it more generic.
+[![npm version](https://img.shields.io/npm/v/tinyglobby.svg?maxAge=3600)](https://npmjs.com/package/tinyglobby)
+[![weekly downloads](https://img.shields.io/npm/dw/tinyglobby.svg?maxAge=3600)](https://npmjs.com/package/tinyglobby)
 
-The public API for this package is not yet finalized.
+A fast and minimal alternative to globby and fast-glob, meant to behave the same way.
 
-### Thanks
+Both globby and fast-glob present some behavior no other globbing lib has,
+which makes it hard to manually replace with something smaller and better.
 
-The React team thanks [Anton Podviaznikov](https://podviaznikov.com/) for donating the `scheduler` package name.
+This library uses only two subdependencies, compared to `globby`'s [23](https://npmgraph.js.org/?q=globby@16.2.0)
+and `fast-glob`'s [17](https://npmgraph.js.org/?q=fast-glob@3.3.3).
+
+## Usage
+
+```js
+import { glob, globSync } from 'tinyglobby';
+
+await glob(['files/*.ts', '!**/*.d.ts'], { cwd: 'src' });
+globSync('src/**/*.ts', { ignore: '**/*.d.ts' });
+```
+
+## Documentation
+
+Visit https://superchupu.dev/tinyglobby to read the full documentation.
