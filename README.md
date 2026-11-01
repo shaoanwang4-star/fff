@@ -1,37 +1,9 @@
-# `react`
+# `scheduler`
 
-React is a JavaScript library for creating user interfaces.
+This is a package for cooperative scheduling in a browser environment. It is currently used internally by React, but we plan to make it more generic.
 
-The `react` package contains only the functionality necessary to define React components. It is typically used together with a React renderer like `react-dom` for the web, or `react-native` for the native environments.
+The public API for this package is not yet finalized.
 
-**Note:** by default, React will be in development mode. The development version includes extra warnings about common mistakes, whereas the production version includes extra performance optimizations and strips all error messages. Don't forget to use the [production build](https://reactjs.org/docs/optimizing-performance.html#use-the-production-build) when deploying your application.
+### Thanks
 
-## Usage
-
-```js
-import { useState } from 'react';
-import { createRoot } from 'react-dom/client';
-
-function Counter() {
-  const [count, setCount] = useState(0);
-  return (
-    <>
-      <h1>{count}</h1>
-      <button onClick={() => setCount(count + 1)}>
-        Increment
-      </button>
-    </>
-  );
-}
-
-const root = createRoot(document.getElementById('root'));
-root.render(<Counter />);
-```
-
-## Documentation
-
-See https://react.dev/
-
-## API
-
-See https://react.dev/reference/react
+The React team thanks [Anton Podviaznikov](https://podviaznikov.com/) for donating the `scheduler` package name.
